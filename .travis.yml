@@ -10,7 +10,7 @@ before_script:
 - echo "deb-src https://ezgo.goodhorse.idv.tw/apt/ezgo/ oxool8 main" >> tmpoxool
 - sudo mv tmpoxool /etc/apt/sources.list.d/oxool.list
 - sudo apt update
-- sudo apt install oxoffice8 libpoco60
+- sudo apt install oxoffice8 libpoco60 fakeroot
 - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 - chmod +x $NVM_DIR/nvm.sh
 - $NVM_DIR/nvm.sh
