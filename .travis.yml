@@ -1,0 +1,13 @@
+language: cpp
+dist: bionic
+before_script:
+        - ./install_build_require_ubuntu.sh
+        - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+        - export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+        - [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+        - nvm install v10
+        - nvm use v10
+        - ln -s `where npm` /usr/bin/
+        - ln -s `where node` /usr/bin/
+script: 
+        - debuild -b -us -uc
